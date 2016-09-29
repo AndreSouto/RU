@@ -28,7 +28,7 @@
         android:textColor="#fdfbfb"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:background="#fc4801"/>
+        android:background="#E7470D"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
         android:text="Senha"
         android:textSize="24sp"
         android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/Matricula" />
+        android:layout_alignStart="@id/Matricula" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
         android:inputType="text"
         android:ems="10"
         android:id="@+id/CampoMatricula"
-        android:layout_alignBottom="@+id/Matricula"
+        android:layout_alignBottom="@id/Matricula"
         android:layout_alignParentEnd="true" />
 
     <EditText
@@ -64,19 +64,19 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/CampoSenha"
-        android:layout_below="@+id/CampoMatricula"
-        android:layout_alignStart="@+id/CampoMatricula" />
+        android:layout_below="@id/CampoMatricula"
+        android:layout_alignStart="@id/CampoMatricula" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="24sp"
         android:text="consultar"
         android:id="@+id/button"
-        android:layout_alignEnd="@+id/CampoSenha"
+        android:layout_alignEnd="@id/CampoSenha"
         android:layout_alignParentStart="true"
-        android:background="#fc4801"
+        android:background="#E7470D"
         android:textSize="10sp"
-        android:layout_below="@+id/CampoSenha"
+        android:layout_below="@id/CampoSenha"
         android:onClick="startActivityHome"
         android:textColor="#fcfafa" />
 
