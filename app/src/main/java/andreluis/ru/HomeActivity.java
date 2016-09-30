@@ -2,6 +2,7 @@ package andreluis.ru;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -157,8 +158,8 @@ public class HomeActivity extends FragmentActivity {
 
     public void startActivityInfo(View view) {
 
-        //Intent homeActivity = new Intent(this, HomeActivity.class);
-        //startActivity(homeActivity);
+        Intent infoActivity = new Intent(this, InfoActivity.class);
+        startActivity(infoActivity);
     }
 
     public void startActivityConfig(View view) {

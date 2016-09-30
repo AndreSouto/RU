@@ -22,7 +22,7 @@
 
     <TextView
         android:layout_width="10000sp"
-        android:layout_height="40sp"
+        android:layout_height="50sp"
         android:text="                      CONSULTA"
         android:textSize="24sp"
         android:textColor="#fdfbfb"
