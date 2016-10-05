@@ -5,12 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+//import android.support.v4.app.Fragment;
 
 public class HomeActivity extends FragmentActivity {
 
@@ -140,11 +141,13 @@ public class HomeActivity extends FragmentActivity {
     }
 
 
-    private void replaceFragment(ListFragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    private void replaceFragment(ListFragment listfragment) {
 
-        transaction.replace(R.id.fragments, fragment);
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.addToBackStack(null);
+
+        transaction.replace(R.id.content,listfragment);
 
         transaction.commit();
     }
@@ -167,6 +170,5 @@ public class HomeActivity extends FragmentActivity {
         Intent favActivity = new Intent(this, FavActivity.class);
         startActivity(favActivity);
     }
-
 
 }

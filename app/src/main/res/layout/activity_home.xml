@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="andreluis.ru.HomeActivity"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <ImageView
         android:layout_width="match_parent"
@@ -112,20 +112,21 @@
         android:layout_alignEnd="@id/textView3"
         android:clickable="true" />
 
-    <fragment
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250sp"
+        android:layout_height="295sp"
         android:layout_below="@+id/desjejumButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp"
-        class="andreluis.ru.DesjejumFragment"
-        tools:layout="@layout/fragment_desjejum"
-        android:id="@+id/fragments" />
+        android:id="@+id/content"
+        android:orientation="horizontal"
+        class="andreluis.ru.DesjejumFragment">
+
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragments"
+        android:layout_below="@id/content"
         android:text="Cardápio Completo"
         android:textAlignment="center"
         android:background="#E7470D"
