@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class InfoActivity extends AppCompatActivity {
 
-    protected ImageButton mInfoButton, mCardapioButton, mConfigButton, mCredButton;
+    protected ImageButton mInfoButton, mCardapioButton, mFavButton, mCredButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +27,14 @@ public class InfoActivity extends AppCompatActivity {
         mCardapioButton = (ImageButton) findViewById(R.id.cardapioButton);
         mCredButton = (ImageButton) findViewById(R.id.creditoButton);
         mInfoButton = (ImageButton) findViewById(R.id.infoButton);
-        mConfigButton = (ImageButton) findViewById(R.id.configButton);
+        mFavButton = (ImageButton) findViewById(R.id.favButton);
 
 
 
-        View.OnClickListener listenerConfig = new View.OnClickListener() {  // Ao clicar no botao de configurações
+        View.OnClickListener listenerFav = new View.OnClickListener() {  // Ao clicar no botao de configurações
 
             public void onClick(View view) {
-                startActivityConfig(view);
+                startActivityFav(view);
 
             }
 
@@ -73,7 +73,7 @@ public class InfoActivity extends AppCompatActivity {
 
         mCardapioButton.setOnClickListener(listenerCard);
         mCredButton.setOnClickListener(listenerCred);
-        mConfigButton.setOnClickListener(listenerConfig);
+        mFavButton.setOnClickListener(listenerFav);
         mInfoButton.setOnClickListener(listenerInfo);
 
     }
@@ -91,10 +91,10 @@ public class InfoActivity extends AppCompatActivity {
         startActivity(homeActivity);
     }
 
-    public void startActivityConfig(View view) {
+    public void startActivityFav(View view) {
 
-        //Intent homeActivity = new Intent(this, HomeActivity.class);
-        //startActivity(homeActivity);
+        Intent favActivity = new Intent(this, FavActivity.class);
+        startActivity(favActivity);
     }
 
 

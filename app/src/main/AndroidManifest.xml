@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".ActivityAlternaFragment" />
-        <activity android:name=".InfoActivity"></activity>
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".FavActivity"></activity>
     </application>
 
 </manifest>
