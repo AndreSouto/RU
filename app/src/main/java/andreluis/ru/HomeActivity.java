@@ -5,11 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 //import android.support.v4.app.Fragment;
 
@@ -18,9 +22,6 @@ public class HomeActivity extends FragmentActivity {
     protected Button mDesjejumButton, mAlmocoButton, mJantarButton;
     protected ImageButton mInfoButton, mCardapioButton, mFavButton, mCredButton;
 
-    ListFragment df = new DesjejumFragment();         //Criação de objetos para troca de fragments
-    ListFragment af = new AlmocoFragment();
-    ListFragment jf = new JantarFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,30 +127,109 @@ public class HomeActivity extends FragmentActivity {
 
 
     public void desjejumFragment(View view){
-        replaceFragment(df);
+
+        ArrayList<HashMap<String, String>> hms =  new ArrayList<>();
+
+        String[] atividades = new String[]{
+                "Pão de queijo",
+                "Sucrilhos Kelloggs",
+                "Presunto",
+                "Leite com nescau"};
+
+        Integer imagens = R.drawable.starr;
+
+        for(int i = 0; i < 4; i++) {
+            HashMap<String, String> hm = new HashMap<String, String>();
+            hm.put("texto", atividades[i]);
+            hm.put("imagem", Integer.toString(imagens));
+
+            hms.add(hm);
+        }
+
+
+        String[] from = new String[]{"texto","imagem"};
+
+        int layout = R.layout.item_list;
+
+        int[] to = new int[]{R.id.t1,R.id.i1};
+
+
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(new SimpleAdapter(this, hms,layout, from, to));
 
     }
 
     public void almocoFragment(View view){
-        replaceFragment(af);
+
+        ArrayList<HashMap<String, String>> hms =  new ArrayList<>();
+
+        String[] atividades = new String[]{
+                "Arroz branco",
+                "Feijão preto",
+                "Almôndega",
+                "Lasanha",
+                "Suco de Uva"};
+
+
+        Integer imagens = R.drawable.starr;
+
+        for(int i = 0; i < 4; i++) {
+            HashMap<String, String> hm = new HashMap<String, String>();
+            hm.put("texto", atividades[i]);
+            hm.put("imagem", Integer.toString(imagens));
+
+            hms.add(hm);
+        }
+
+
+        String[] from = new String[]{"texto","imagem"};
+
+        int layout = R.layout.item_list;
+
+        int[] to = new int[]{R.id.t1,R.id.i1};
+
+
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(new SimpleAdapter(this, hms,layout, from, to));
+
 
     }
 
     public void jantarFragment(View view){
-        replaceFragment(jf);
 
-    }
+        ArrayList<HashMap<String, String>> hms =  new ArrayList<>();
+
+        String[] atividades = new String[]{
+                "Caçarola marinada(paleta)",
+                "Cuzcuz vegetariano",
+                "Feijoada",
+                "Acelga e nabo com tomate",
+                "Suco de Laranja",
+                "Suco de Uva",
+                "Brigadeiro"};
 
 
-    private void replaceFragment(ListFragment listfragment) {
+        Integer imagens = R.drawable.starr;
 
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.addToBackStack(null);
+        for(int i = 0; i < 7; i++) {
+            HashMap<String, String> hm = new HashMap<String, String>();
+            hm.put("texto", atividades[i]);
+            hm.put("imagem", Integer.toString(imagens));
 
-        transaction.replace(R.id.content,listfragment);
+            hms.add(hm);
+        }
 
-        transaction.commit();
+
+        String[] from = new String[]{"texto","imagem"};
+
+        int layout = R.layout.item_list;
+
+        int[] to = new int[]{R.id.t1,R.id.i1};
+
+
+        ListView lv = (ListView) findViewById(R.id.list);
+        lv.setAdapter(new SimpleAdapter(this, hms,layout, from, to));
+
     }
 
 
@@ -170,5 +250,6 @@ public class HomeActivity extends FragmentActivity {
         Intent favActivity = new Intent(this, FavActivity.class);
         startActivity(favActivity);
     }
+
 
 }

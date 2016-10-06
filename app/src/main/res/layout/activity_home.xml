@@ -112,21 +112,20 @@
         android:layout_alignEnd="@id/textView3"
         android:clickable="true" />
 
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="295sp"
         android:layout_below="@+id/desjejumButton"
-        android:id="@+id/content"
-        android:orientation="horizontal"
-        class="andreluis.ru.DesjejumFragment">
+        android:id="@+id/list"
+        android:orientation="horizontal">
 
-    </LinearLayout>
+    </ListView>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/content"
+        android:layout_below="@id/list"
         android:text="Cardápio Completo"
         android:textAlignment="center"
         android:background="#E7470D"

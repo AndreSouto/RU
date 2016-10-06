@@ -18,7 +18,11 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".ActivityAlternaFragment" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".FavActivity"></activity>
+        <activity android:name=".FavActivity" />
+        <activity android:name=".ItemListView" />
+        <activity android:name=".ItemsView" />
+        <activity android:name=".Desjejum" />
+        <activity android:name=".DesjejumAdapter" />
     </application>
 
 </manifest>

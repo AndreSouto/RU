@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="10dp"
+    tools:context="andreluis.ru.HomeActivity">
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="New Text"
+        android:id="@+id/t1"
+        android:layout_alignParentTop="true"
+        android:textSize="17dp"
+        android:textColor="#0a0909"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/i1"
+        android:layout_toEndOf="@+id/t1" />
+</RelativeLayout>
