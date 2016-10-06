@@ -1,6 +1,29 @@
 <resources>
-    <string name="app_name">RU</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-</resources>
+        <string name="app_name">RU</string>
+        <string name="matricula">Matrícula</string>
+        <string name="consulta">CONSULTA</string>
+        <string name="autenticacao_do_usuario">Autenticação do usuário</string>
+        <string name="senha">Senha</string>
+        <string name="consultar">consultar</string>
+        <string name="_26_09_segunda_feira">26/09 SEGUNDA-FEIRA</string>
+        <string name="almoco">Almoço</string>
+        <string name="jantar">Jantar</string>
+        <string name="_07_00_09_00">07:00 - 09:00</string>
+        <string name="_11_00_14_30">11:00 - 14:30</string>
+        <string name="_17_00_19_30">17:00 - 19:30</string>
+        <string name="desjejum">Desjejum</string>
+        <string name="reembolso">Para reembolsar seus creditos, é necessário realizar o requerimento junto à administração do RU.</string>
+        <string name="recarga">RECARGA</string>
+        <string name="cartao_de_credito">Cartao de Credito</string>
+        <string name="gerar_boleto">Gerar Boleto</string>
+        <string name="reembolsar">REEMBOLSO</string>
+        <string name="autenticao_do_usuario">Autenticação do usuário</string>
+        <string name="informacoes">INFORMAÇÕES</string>
+        <string name="fornecedores">FORNECEDORES</string>
+        <string name="fornecedores_text">A produção e distribuição de refeições do RU é de competência da empresa terceirizada especializada. Atualmente, a empresa prestadora desse serviço é a Sanoli, que atua no mercado há 36 anos. Tem sede em Brasília, onde funciona sua cozinha central.</string>
+        <string name="o_ru">O RU</string>
+        <string name="o_ru_text">Primeiramente, no Campus Darcy Ribeiro, o RU foi projetado pela FAU/UnB e ianugurado em 1975. Atualmente servimos, em média, 6 mil refeições por dia e contamos com 7 cozinhas, 6 refeitórios, 6 caixas, 1 guarda-volumes e banheiros.</string>
+        <string name="cardapio_completo">Cardápio Completo</string>
+    </resources>
+

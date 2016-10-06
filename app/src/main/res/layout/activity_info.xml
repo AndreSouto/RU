@@ -1,65 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="andreluis.ru.InfoActivity">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefbfb"
+    >
 
     <TextView
         android:layout_width="10000sp"
         android:layout_height="65sp"
         android:text="\nINFORMAÇÕES"
-        android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:textSize="24sp"
         android:textColor="#fdfbfb"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:id="@+id/infomenu"
         android:background="#E7470D"
-        android:id="@+id/Titulo"/>
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Diretoria do RU:"
-        android:textSize="25sp"
-        android:layout_below="@+id/Titulo"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp"
-        android:textColor="#E7470D"
-        android:id="@+id/TextDiretoria"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Diretora: Ygraine Hartmann"
-        android:textSize="20sp"
-        android:textColor="#514d4c"
-        android:layout_below="@+id/TextDiretoria"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView5" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Assistente de direção: Danilo dos Santos"
-        android:textSize="20sp"
-        android:textColor="#514d4c"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView6" />
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewflipper"
+        android:layout_below="@+id/infomenu"
+        android:layout_above="@+id/barra"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Telefone: (61) 3107-1073"
-        android:textSize="20sp"
-        android:textColor="#514d4c"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="480sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fornecedores"
+                android:textSize="24sp"
+                android:textColor="#FF5A5959"
+                android:layout_marginTop="20sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/fornecedores"
+                />
+
+            <ImageButton
+                android:layout_width="20sp"
+                android:layout_height="40sp"
+                android:src="@drawable/seta"
+                android:id="@+id/setaEsquerda_f"
+                android:background="#00ffffff"
+                android:clickable="true"
+                android:layout_marginTop="15sp"
+                android:layout_marginStart="20sp"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:layout_width="20sp"
+                android:layout_height="40sp"
+                android:src="@drawable/setadireita"
+                android:id="@+id/setaDireita_f"
+                android:background="#00ffffff"
+                android:clickable="true"
+                android:layout_marginTop="15sp"
+                android:layout_marginStart="300sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fornecedores_text"
+                android:id="@+id/fornecedores_text"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:layout_below="@+id/fornecedores"
+                android:layout_marginTop="20dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="480sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            >
+            <TextView
+                android:id="@+id/o_ru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o_ru"
+                android:textSize="24sp"
+                android:textColor="#FF5A5959"
+                android:layout_marginTop="20sp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageButton
+                android:layout_width="20sp"
+                android:layout_height="40sp"
+                android:src="@drawable/seta"
+                android:id="@+id/setaEsquerda_oru"
+                android:background="#00ffffff"
+                android:clickable="true"
+                android:layout_marginTop="15sp"
+                android:layout_marginStart="20sp"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:layout_width="20sp"
+                android:layout_height="40sp"
+                android:src="@drawable/setadireita"
+                android:id="@+id/setaDireita_oru"
+                android:background="#00ffffff"
+                android:clickable="true"
+                android:layout_marginTop="15sp"
+                android:layout_marginStart="300sp"
+                />
+
+            <TextView
+                android:id="@+id/o_ru_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o_ru_text"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:layout_below="@+id/o_ru"
+                android:layout_marginTop="20sp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </ViewFlipper>
+
 
     <ImageButton
         android:layout_width="100sp"
@@ -69,8 +151,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="#01ffffff"
-        android:clickable="true"
-        android:onClick="startActivityCard"/>
+        android:clickable="true" />
 
     <ImageButton
         android:layout_width="100sp"
@@ -91,7 +172,8 @@
         android:src="@drawable/info"
         android:background="#00ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/creditoButton" />
+        android:layout_toEndOf="@+id/creditoButton"
+        android:onClick="startActivityInfo"/>
 
     <ImageButton
         android:layout_width="100sp"
@@ -103,7 +185,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:onClick="startActivityFav"/>
-
 
 
 </RelativeLayout>
