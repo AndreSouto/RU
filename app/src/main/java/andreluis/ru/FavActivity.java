@@ -8,17 +8,26 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.parse.GetCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 public class FavActivity extends AppCompatActivity {
 
-    boolean favorites[] = new boolean[4];
     protected ImageButton mInfoButton, mCardapioButton, mFavButton, mCredButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav);
-
-
+        Parse.initialize(new Parse.Configuration.Builder(this)
+            .applicationId("BuDxTVLBouV1tIRCZU0g2yNuk361NZ4JOmBXvja4")
+            .clientKey("wLDfm3Os2ypS6j62PqZzRgocNZwzMgRRZUKFzPYM")
+            .server("https://parseapi.back4app.com")
+        .build()
+        );
 
         mCardapioButton = (ImageButton) findViewById(R.id.cardapioButton);
         mCredButton = (ImageButton) findViewById(R.id.creditoButton);
@@ -30,8 +39,7 @@ public class FavActivity extends AppCompatActivity {
         View.OnClickListener listenerFav = new View.OnClickListener() {  // Ao clicar no botao de configurações
 
             public void onClick(View view) {
-
-                Toast toast = Toast.makeText (FavActivity.this ,"Esta é a tela de favoritos", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText (FavActivity.this ,"Esta é a tela de favoritos " , Toast.LENGTH_SHORT);
                 toast.show();
 
             }
@@ -80,8 +88,20 @@ public class FavActivity extends AppCompatActivity {
 
 
     public void paletaFunc(View view) {
-        Switch paletaSwitch = (Switch) findViewById(R.id.paletaSwitch);
-        favorites[0] = paletaSwitch.isChecked();
+        final Switch paletaSwitch = (Switch) findViewById(R.id.paletaSwitch);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Comida");
+
+        query.getInBackground("UblMYZ8STV", new GetCallback<ParseObject>() {
+            public void done(ParseObject paleta, ParseException e) {
+                if (e == null) {
+                    // Now let's update it with some new data. In this case, only cheatMode and score
+                    // will get sent to the Parse Cloud. playerName hasn't changed.
+                    paleta.put("favorito", paletaSwitch.isChecked());
+                    paleta.saveInBackground();
+                }
+            }
+        });
 
         Toast toast = Toast.makeText ( this ,
                 "paleta:" + paletaSwitch.isChecked() , Toast.LENGTH_SHORT );
@@ -89,8 +109,20 @@ public class FavActivity extends AppCompatActivity {
     }
 
     public void lasanhaFunc(View view) {
-        Switch lasanhaSwitch = (Switch) findViewById(R.id.lasanhaSwitch);
-        favorites[1] = lasanhaSwitch.isChecked();
+        final Switch lasanhaSwitch = (Switch) findViewById(R.id.lasanhaSwitch);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Comida");
+
+        query.getInBackground("dFKcBrE7iS", new GetCallback<ParseObject>() {
+            public void done(ParseObject lasanha, ParseException e) {
+                if (e == null) {
+                    // Now let's update it with some new data. In this case, only cheatMode and score
+                    // will get sent to the Parse Cloud. playerName hasn't changed.
+                    lasanha.put("favorito", lasanhaSwitch.isChecked());
+                    lasanha.saveInBackground();
+                }
+            }
+        });
 
         Toast toast = Toast.makeText ( this ,
                 "lasanha:" + lasanhaSwitch.isChecked() , Toast.LENGTH_SHORT );
@@ -98,8 +130,20 @@ public class FavActivity extends AppCompatActivity {
     }
 
     public void almondegaFunc(View view) {
-        Switch almondegaSwitch = (Switch) findViewById(R.id.almondegaSwitch);
-        favorites[2] = almondegaSwitch.isChecked();
+        final Switch almondegaSwitch = (Switch) findViewById(R.id.almondegaSwitch);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Comida");
+
+        query.getInBackground("y7G3Tpqyri", new GetCallback<ParseObject>() {
+            public void done(ParseObject almondega, ParseException e) {
+                if (e == null) {
+                    // Now let's update it with some new data. In this case, only cheatMode and score
+                    // will get sent to the Parse Cloud. playerName hasn't changed.
+                    almondega.put("favorito", almondegaSwitch.isChecked());
+                    almondega.saveInBackground();
+                }
+            }
+        });
 
         Toast toast = Toast.makeText ( this ,
                 "almondega:" + almondegaSwitch.isChecked() , Toast.LENGTH_SHORT );
@@ -107,8 +151,20 @@ public class FavActivity extends AppCompatActivity {
     }
 
     public void feijoadaFunc(View view) {
-        Switch feijoadaSwitch = (Switch) findViewById(R.id.feijoadaSwitch);
-        favorites[3] = feijoadaSwitch.isChecked();
+        final Switch feijoadaSwitch = (Switch) findViewById(R.id.feijoadaSwitch);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Comida");
+
+        query.getInBackground("IycwfR2Cc1", new GetCallback<ParseObject>() {
+            public void done(ParseObject feijoada, ParseException e) {
+                if (e == null) {
+                    // Now let's update it with some new data. In this case, only cheatMode and score
+                    // will get sent to the Parse Cloud. playerName hasn't changed.
+                    feijoada.put("favorito", feijoadaSwitch.isChecked());
+                    feijoada.saveInBackground();
+                }
+            }
+        });
 
         Toast toast = Toast.makeText ( this ,
                 "feijoada:" + feijoadaSwitch.isChecked() , Toast.LENGTH_SHORT );
